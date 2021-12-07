@@ -34,7 +34,7 @@ if (isset($_POST['especie'])) {
         $_SESSION['cadastrado'] = "Animal Cadastrado com Sucesso!!";
     }
     if (isset($_FILES['foto'])) {
-        $consulta = $conexao->prepare("SELECT id_animal FROM animal WHERE nome_animal LIKE '%$nome%'");
+        $consulta = $conexao->prepare("SELECT id_animal FROM animal WHERE nome_animal LIKE '%$nome%'");//resolver 
         $consulta->execute();
         $dado = $consulta->fetch();
         if ($consulta->rowCount() > 0) {
